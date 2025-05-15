@@ -7,10 +7,31 @@ export const MENU: MenuItem[] = [
         isTitle: true
     },
     {
-        id: 9,
-        label: 'MENUITEMS.DASHBOARDS.TEXT',
+        id: 2,
+        label: "Page d'accueil",
         icon: 'bx-home-circle',
         link: '/',
+    },
+    {
+        id: 100,
+        label: "Tableaux de bord",
+        icon: 'bx-bar-chart',
+        subItems: [
+            {
+                id: 101,
+                label: 'Analytique',
+                icon: 'bx-pie-chart-alt',
+                link: '/dashboard/analytics',
+                parentId: 100
+            },
+            {
+                id: 102,
+                label: 'Gestion',
+                icon: 'bx-cog',
+                link: '/dashboard/management',
+                parentId: 100
+            }
+        ]
     },
     {
         id: 7,

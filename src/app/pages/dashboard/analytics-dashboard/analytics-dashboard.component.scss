@@ -1,0 +1,49 @@
+:host {
+  .card {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(35, 42, 54, 0.08);
+    border: none;
+  }
+  .card-title {
+    color: #e2001a;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .btn-primary {
+    background: #e2001a;
+    border: none;
+    &:hover {
+      background: #ffb600;
+      color: #232a36;
+    }
+  }
+  .apexcharts-legend-text {
+    color: #232a36 !important;
+  }
+}
+
+.logo-animated {
+  opacity: 0;
+  transform: translateX(-30px) scale(0.8) rotate(-10deg);
+  animation: logoIn 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes logoIn {
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1) rotate(0);
+  }
+}
+
+.title-animated {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: titleIn 1s 0.3s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes titleIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

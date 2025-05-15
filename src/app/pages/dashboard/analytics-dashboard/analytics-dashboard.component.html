@@ -1,0 +1,103 @@
+<div class="container-fluid">
+  <div class="mb-4 d-flex align-items-center">
+    <img src="assets/logo-attijari.png" alt="Attijari Bank" height="40" class="logo-animated" style="margin-right:15px;">
+    <h2 class="title-animated" style="color:#e2001a;font-weight:700;letter-spacing:1px;">Dashboard Analytique</h2>
+  </div>
+  <!-- Filtres -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Filtres</h5>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <label>Date de début</label>
+                <input type="date" class="form-control" [(ngModel)]="dateRange.start">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label>Date de fin</label>
+                <input type="date" class="form-control" [(ngModel)]="dateRange.end">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label>Formulaire</label>
+                <select class="form-control" [(ngModel)]="selectedForm">
+                  <option value="all">Tous les formulaires</option>
+                  <option value="form1">Formulaire 1</option>
+                  <option value="form2">Formulaire 2</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label>Segment utilisateur</label>
+                <select class="form-control" [(ngModel)]="selectedUserSegment">
+                  <option value="all">Tous les segments</option>
+                  <option value="segment1">Segment 1</option>
+                  <option value="segment2">Segment 2</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-12">
+              <button class="btn btn-primary" (click)="applyFilters()">Appliquer les filtres</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Graphiques -->
+  <div class="row">
+    <!-- Taux de participation -->
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Taux de participation</h5>
+          <apx-chart
+            [series]="participationChartOptions.series"
+            [chart]="participationChartOptions.chart"
+            [labels]="participationChartOptions.labels"
+            [responsive]="participationChartOptions.responsive">
+          </apx-chart>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scores de satisfaction -->
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Scores de satisfaction par question</h5>
+          <apx-chart
+            [series]="satisfactionChartOptions.series"
+            [chart]="satisfactionChartOptions.chart"
+            [xaxis]="satisfactionChartOptions.xaxis">
+          </apx-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparaison temporelle -->
+  <div class="row mt-4">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Évolution de la satisfaction</h5>
+          <apx-chart
+            [series]="timeComparisonChartOptions.series"
+            [chart]="timeComparisonChartOptions.chart"
+            [xaxis]="timeComparisonChartOptions.xaxis">
+          </apx-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

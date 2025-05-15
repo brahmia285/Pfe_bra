@@ -19,6 +19,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { DashboardsModule } from './dashboards/dashboards.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { EnqueteComponent } from './enquete/enquete.component';
+import { HomeComponent } from './home/home.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -28,7 +29,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 
 @NgModule({
   declarations: [
-    EnqueteComponent
+    EnqueteComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="mb-4 d-flex align-items-center">
+    <img src="assets/logo-attijari.png" alt="Attijari Bank" height="40" class="logo-animated" style="margin-right:15px;">
+    <h2 class="title-animated" style="color:#ffb600;font-weight:700;letter-spacing:1px;">Dashboard de gestion</h2>
+  </div>
+  <!-- Liste des formulaires -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Liste des formulaires</h5>
+          <ng2-smart-table
+            [settings]="formsTableSettings"
+            [source]="formsData"
+            (custom)="onFormStatusChange($event)">
+          </ng2-smart-table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gestion des utilisateurs -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Gestion des utilisateurs</h5>
+          <ng2-smart-table
+            [settings]="usersTableSettings"
+            [source]="usersData"
+            (custom)="onUserRoleChange($event)">
+          </ng2-smart-table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

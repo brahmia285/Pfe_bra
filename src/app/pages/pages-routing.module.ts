@@ -3,10 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DefaultComponent } from './dashboards/default/default.component';
 import { EnqueteComponent } from './enquete/enquete.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard' },
-  { path: 'dashboard', component: DefaultComponent },
+  { path: '', component: HomeComponent },
+  { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
   { path: 'enquete', component: EnqueteComponent },
   { path: 'dashboards', loadChildren: () => import('./dashboards/dashboards.module').then(m => m.DashboardsModule) },
 ];

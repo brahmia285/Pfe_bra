@@ -65,13 +65,15 @@ class FirebaseAuthBackend {
      * Logout the user
      */
     logout = () => {
-        return new Promise((resolve, reject) => {
-            firebase.auth().signOut().then(() => {
-                resolve(true);
-            }).catch((error) => {
-                reject(this._handleError(error));
-            });
-        });
+        // return new Promise((resolve, reject) => {
+        //     firebase.auth().signOut().then(() => {
+        //         resolve(true);
+        //     }).catch((error) => {
+        //         reject(this._handleError(error));
+        //     });
+        // });
+
+        
     }
 
     setLoggeedInUser = (user) => {

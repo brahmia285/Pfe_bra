@@ -1,0 +1,45 @@
+:host {
+  .card-title {
+    color: #ffb600;
+    font-weight: 700;
+  }
+  .ng2-smart-table {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(35, 42, 54, 0.08);
+  }
+  .ng2-smart-table thead {
+    background: #e2001a;
+    color: #fff;
+  }
+  .ng2-smart-table tbody tr.selected {
+    background: #ffb600 !important;
+    color: #232a36 !important;
+  }
+}
+
+.logo-animated {
+  opacity: 0;
+  transform: translateX(-30px) scale(0.8) rotate(-10deg);
+  animation: logoIn 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes logoIn {
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1) rotate(0);
+  }
+}
+
+.title-animated {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: titleIn 1s 0.3s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes titleIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
